@@ -1,0 +1,142 @@
+table tr td{
+    vertical-align: middle;
+}
+
+td button{
+    margin: 5px;
+}
+
+td button i{
+    font-size: 20px;
+}
+
+
+.modal-header{
+    background: #0d6efd;
+    color: #fff;
+}
+
+.modal-body form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.modal-body form .imgholder{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.imgholder .upload{
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    width: 100%;
+    height: 100px;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload i{
+    color: #fff;
+    font-size: 35px;
+}
+
+.imgholder:hover .upload{
+    display: flex;
+}
+
+.imgholder .upload input{
+    display: none;
+}
+
+.modal-body form .inputField{
+    flex-basis: 68%;
+    border-left: 5px groove blue;
+    padding-left: 20px;
+}
+
+form .inputField > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form .inputField > div label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#userForm form .inputField > div label::after{
+    content: "*";
+    color: red;
+}
+
+form .inputField > div input{
+    width: 75%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid blue;
+}
+
+.modal-footer .submit{
+    font-size: 18px;
+}
+
+
+#readData form .inputField > div input{
+    color: #000;
+    font-size: 18px;
+}
+/* Center-align the select element within its parent container */
+.inputField select {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+/* Add to style.css or within a <style> tag */
+.btn-custom {
+    font-size: 1rem; /* Medium size */
+    padding: 0.80rem 0.70rem; /* Adjust padding if needed */
+}
+
+

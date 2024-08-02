@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Bootstrap 5 icons CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Sales Records</title>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1 class="display-4">Sales Records</h1>
+    </header>
+
+    <main class="container mt-5">
+        <div class="text-center mb-4">
+            <a href="index.html" class="btn btn-secondary btn-lg"><i class="bi bi-arrow-left"></i> Back to Home</a>
+        </div>
+
+        <!-- Sales Form -->
+        <form id="salesForm">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="saleDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="saleDate" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="saleProduct" class="form-label">Item Name</label>
+                    <select class="form-select" id="saleProduct" required></select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="saleQuantity" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="saleQuantity" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="salePrice" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="salePrice" required readonly>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="saleCustomer" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="saleCustomer" required>
+                </div>
+
+                
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Sale</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Total Amount -->
+        <div class="text-end mt-4">
+            <h4>Total Amount: <span id="totalAmount">$0.00</span></h4>
+        </div>
+
+        <!-- Sales Data Table -->
+        <table class="table table-striped mt-5 text-center table-bordered">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Date</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Customer</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="salesData"></tbody>
+        </table>
+    </main>
+
+    <!-- Edit Sales Modal -->
+   <!-- Edit Sales Modal -->
+<!-- Edit Sales Modal -->
+<div class="modal fade" id="editSalesModal" tabindex="-1" aria-labelledby="editSalesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editSalesModalLabel">Edit Sale</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editSalesForm">
+                    <input type="hidden" id="editSaleIndex">
+                    <div class="mb-3">
+                        <label for="editSaleDate" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="editSaleDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editSaleProduct" class="form-label">Item Name</label>
+                        <select class="form-select" id="editSaleProduct" required></select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editSaleQuantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="editSaleQuantity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editSalePrice" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="editSalePrice" required readonly>
+                    </div>
+                    <div class="mb-4">
+                        <label for="editSaleCustomer" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="editSaleCustomer" required>
+                    </div>
+                    <div class="text-end ms-3 me-3"> <!-- Added side margins here -->
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-custom">Update Sale</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Custom Script -->
+    <script src="sales.js"></script>
+</body>
+</html>

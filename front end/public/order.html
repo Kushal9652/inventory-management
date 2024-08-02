@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Bootstrap 5 icons CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Order Page</title>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1 class="display-4">Order Page</h1>
+    </header>
+
+    <main class="container mt-5">
+        <div id="orderFormContainer">
+            <div class="text-center mb-4">
+                <a href="index.html" class="btn btn-secondary btn-lg"><i class="bi bi-arrow-left"></i> Back to Home</a>
+            </div>
+
+            <form id="orderForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="orderName" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="orderName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="orderEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="orderEmail" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="orderProduct" class="form-label">Product</label>
+                        <input type="text" class="form-control" id="orderProduct" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="orderQuantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="orderQuantity" required>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="orderAddress" class="form-label">Shipping Address</label>
+                        <textarea class="form-control" id="orderAddress" rows="3" required></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Order</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="successMessage" class="text-center mt-5" style="display: none;">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Order Placed Successfully!</h4>
+                <p>Your order has been successfully placed. Thank you for shopping with us!</p>
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Custom Script -->
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Hide the form and show the success message
+            document.getElementById('orderFormContainer').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
